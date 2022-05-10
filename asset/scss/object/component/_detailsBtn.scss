@@ -1,0 +1,22 @@
+@use "./../../foundation/variable"as v;
+@use "./../../foundation/mixin"as m;
+
+.c-detailsBtn {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 163px;
+  height: 42.5px;
+  background-color: v.$color-white;
+  color: v.$color-main;
+  font-weight: bold;
+  font-size: 1.6rem;
+  border-radius: 21px;
+}
+@include m.lg {
+  .c-detailsBtn {
+    width: 16vw;
+    height: 76px;
+    border-radius: 38px;
+  }
+}

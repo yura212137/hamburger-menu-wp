@@ -1,0 +1,104 @@
+@use "./../foundation/variable"as v;
+@use "./../foundation/mixin"as m;
+
+.l-aside {
+  width: 367px;
+  background-color: v.$color-aside;
+  position: fixed;
+  top: 0;
+  right: -367px;
+  z-index: 200;
+  height: 100%;
+  transition: 0.3s;
+  overflow: auto;
+
+  label {
+    position: absolute;
+    top: 0;
+    right: 0;
+    padding-right: 20px;
+    font-size: 5rem;
+  }
+
+  &__menu {
+    display: none;
+  }
+
+  &>ul {
+    margin: 40px;
+
+    &:first-of-type {
+      margin-top: 200px;
+    }
+
+    &>li>a {
+      display: block;
+      font-weight: bold;
+      font-size: 24px;
+
+    }
+
+    &>ul>li {
+      margin: 20px;
+      margin-right: 0;
+
+      &:first-of-type {
+        margin-top: 30px;
+      }
+
+      &>a {
+        display: block;
+        font-size: 20px;
+      }
+    }
+  }
+}
+
+input[type="checkbox"]:checked~aside {
+  right: 0;
+}
+
+input[type="checkbox"]:checked~.back {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba($color: #000000, $alpha: 0.5);
+  z-index: 150;
+}
+
+@include m.lg {
+  .l-aside {
+    width: 367px;
+    background-color: v.$color-aside;
+    position: static;
+    z-index: 0;
+    display: flex;
+    flex-direction: column;
+    height: auto;
+
+    label {
+      display: none;
+    }
+
+    &__menu {
+      display: block;
+      &>a {
+        display: block;
+        font-size: 3.4rem;
+        font-weight: bold;
+        margin-top: 85px;
+        margin-left: 30px;
+      }
+
+    }
+    &>ul {
+      &:first-of-type {
+        margin-top: 80px;
+      }
+    }
+  }
+  input[type="checkbox"]:checked~.back {
+    display: none;
+  }
+}

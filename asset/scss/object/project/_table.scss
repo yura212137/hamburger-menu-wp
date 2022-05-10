@@ -1,0 +1,36 @@
+@use "./../../foundation/variable"as v;
+@use "./../../foundation/mixin"as m;
+
+.p-table {
+  margin: 30px 0;
+  background-color: v.$color-white;
+  color: v.$color-brown_content;
+  font-size: 1.6rem;
+  width: 100%;
+  tr {
+    height: 77px;
+    border: solid 1px v.$color-main;
+  }
+  td {
+    padding: 30px;
+    border: solid 1px v.$color-main;
+  }
+  &__column1 {
+    width: 40%;
+  }
+}
+
+@include m.md {
+  .p-table {
+    margin: 60px 0;
+
+    &__column1 {
+      width: 30%;
+    }
+  }
+}
+
+
+@include m.lg {
+
+}

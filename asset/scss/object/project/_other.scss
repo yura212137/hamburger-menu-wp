@@ -1,0 +1,33 @@
+@use "./../../foundation/variable"as v;
+@use "./../../foundation/mixin"as m;
+
+.p-other {
+  &__text {
+    color: v.$color-brown_content;
+    font-size: 1.6rem;
+    font-weight: bold;
+    margin-top: 30px;
+    margin-bottom: 177px;
+  }
+
+}
+
+@include m.md {
+  .p-other {
+    &__text {
+      margin-top: 60px;
+      margin-bottom: 228px;
+    }
+  
+  }
+}
+
+
+@include m.lg {
+  .p-other {
+    &__text {
+      margin-bottom: 353px;
+    }
+  
+  }
+}

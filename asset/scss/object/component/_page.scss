@@ -1,0 +1,80 @@
+@use "./../../foundation/variable"as v;
+@use "./../../foundation/mixin"as m;
+
+.c-page {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.6rem;
+  font-weight: bold;
+  color: v.$color-main;
+  margin-top: 60px;
+  margin-bottom: 30px;
+  &__tbpc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    display: none;
+  }
+  &__currentpage {
+    margin-right: 15px;
+  }
+  &__number {
+    margin: 0 10px;
+    a {
+      display: inline-block;
+      width: 35px;
+      height: 35px;
+      margin: 0 7.5px;
+      border: 1px v.$color-main solid;
+      background-color: v.$color-white;
+      text-align: center;
+      line-height: 35px;
+      &:first-of-type {
+        background-color: v.$color-brown;
+        color: v.$color-white;
+      }
+    }
+  }
+}
+
+@include m.md {
+  .c-page {
+    justify-content: center;
+    margin-top: 105px;
+    &__tbpc {
+      display: flex;
+    }
+    &__spPrev {
+      display: none;
+    }
+    &__spNext {
+      display: none;
+    }
+    &__currentpage {
+      margin-right: 1.5vw;
+    }
+    &__number {
+      margin: 1.0vw;
+      a {
+        margin: 0.4vw;
+      }
+    }
+  }
+}
+@include m.lg {
+  .c-page {
+    justify-content: center;
+    margin-top: 150px;
+    
+    &__currentpage {
+      margin-right: 15px;
+    }
+    &__number {
+      margin: 10px;
+      a {
+        margin: 7.5px;
+      }
+    }
+  }
+}

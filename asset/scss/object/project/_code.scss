@@ -1,0 +1,18 @@
+@use "./../../foundation/variable"as v;
+@use "./../../foundation/mixin"as m;
+
+.p-code {
+  padding: 50px;
+  background-color: v.$color-gray;
+  color: v.$color-brown_content;
+  font-size: 1.6rem;
+}
+
+@include m.md {
+  
+}
+
+
+@include m.lg {
+
+}

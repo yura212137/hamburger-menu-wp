@@ -1,0 +1,74 @@
+@use "./../../foundation/variable"as v;
+@use "./../../foundation/mixin"as m;
+
+.c-title {
+    font-size: 4.1rem;
+    font-weight: bold;
+    color: v.$color-white;
+    position: relative;
+
+    &::after {
+        content: "";
+        position: absolute;
+        left: 0;
+        bottom: -15px;
+        width: 45px;
+        height: 2px;
+        background-color: v.$color-white;
+    }
+
+    &--takeout {
+        font-size: 4.1rem;
+        font-weight: bold;
+        color: v.$color-white_takeout;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -15px;
+            width: 45px;
+            height: 2px;
+            background-color: v.$color-white;
+        }
+    }
+    &--access {
+        font-size: 3rem;
+        font-weight: bold;
+        color: v.$color-white;
+        position: relative;
+
+        &::after {
+            content: "";
+            position: absolute;
+            left: 35px;
+            bottom: 0px;
+            width: 80px;
+            height: 2px;
+            background-color: v.$color-white;
+        }
+    }
+}
+
+@include m.lg {
+    .c-title {
+        
+        &--access {
+            font-size: 3.6rem;
+            font-weight: bold;
+            color: v.$color-white;
+            position: relative;
+    
+            &::after {
+                content: "";
+                position: absolute;
+                left: 55px;
+                bottom: 10px;
+                width: 100px;
+                height: 2px;
+                background-color: v.$color-white;
+            }
+        }
+    }
+}

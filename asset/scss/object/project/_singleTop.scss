@@ -1,0 +1,143 @@
+@use "./../../foundation/variable"as v;
+@use "./../../foundation/mixin"as m;
+
+.p-singleTop {
+  width: 100%;
+  height: 225px;
+  margin-top: 220px;
+  background-image: url(/asset/img/singletop.jpg);
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
+
+  h1 {
+    font-size: 3.6rem;
+    font-weight: bold;
+    color: v.$color-white;
+    line-height: 220px;
+    padding-left: 25px;
+  }
+
+  &__text {
+    h2 {
+      color: v.$color-brown_content;
+      font-size: 2.8rem;
+      font-weight: bold;
+      margin: 30px 0;
+    }
+
+    p {
+      color: v.$color-brown_content;
+      font-size: 1.6rem;
+      margin-bottom: 34px;
+    }
+
+    h3 {
+      color: v.$color-brown_content;
+      font-size: 2.4rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+
+    h4 {
+      color: v.$color-brown_content;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 36px;
+    }
+
+    h5 {
+      color: v.$color-brown_content;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 29px;
+    }
+
+    h6 {
+      color: v.$color-brown_content;
+      font-size: 2rem;
+      font-weight: bold;
+      margin-bottom: 30px;
+    }
+  }
+
+  &__tag {
+    background-color: v.$color-gray;
+    padding: 30px 20px;
+
+    p {
+      color: v.$color-brown_content;
+      font-size: 1.6rem;
+    }
+  }
+
+  &__authority {
+    color: v.$color-brown_content;
+    font-size: 1.6rem;
+
+    .link {
+      text-decoration: underline;
+      color: #4A6C9B;
+    }
+  }
+}
+
+@include m.md {
+  .p-singleTop {
+    height: 500px;
+
+    h1 {
+      font-size: 6rem;
+      font-weight: bold;
+      color: v.$color-white;
+      line-height: 500px;
+      padding-left: 10vw;
+    }
+
+    &__text {
+      h2 {
+        font-size: 3.6rem;
+        margin: 60px 0;
+      }
+
+      p {
+        margin-bottom: 60px;
+      }
+
+      h3 {
+        font-size: 2.8rem;
+        margin-bottom: 60px;
+      }
+
+      h4 {
+        margin-bottom: 75px;
+      }
+
+      h5 {
+        margin-bottom: 60px;
+      }
+
+      h6 {
+        margin-bottom: 60px;
+      }
+    }
+
+    &__tag {
+      padding: 50px;
+      padding-bottom: 60px;
+    }
+  }
+}
+
+@include m.lg {
+  .p-singleTop {
+    margin-top: 0px;
+
+    h1 {
+      padding-left: 4.5vw;
+    }
+    &__tag {
+      padding: 50px;
+    }
+  }
+}

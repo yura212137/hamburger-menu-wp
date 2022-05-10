@@ -1,0 +1,47 @@
+@use "./../../foundation/variable"as v;
+@use "./../../foundation/mixin"as m;
+
+.c-searchform {
+  &__input {
+    font-family: "Font Awesome 6 Free";
+    font-weight: 900;
+    width: 230px;
+    height: 46px;
+    border: 1px solid v.$color-main;
+    border-radius: 10px;
+    background-color: v.$color-base;
+    text-align: left;
+    padding: 0 10px;
+    font-size: 1.8rem;
+  }
+  &__button {
+    width: 78px;
+    height: 46px;
+    border: 1px solid v.$color-main;
+    border-radius: 10px;
+    background-color: v.$color-aside;
+    margin-left: 10px;
+    font-weight: bold;
+  }
+}
+@include m.md {
+  .c-searchform {
+    &__input {
+      width: 47.5vw;
+    }
+    &__button {
+      width: 136px;
+    }
+  }
+}
+@include m.lg {
+  .c-searchform {
+    &__input {
+      width: 22vw;
+    }
+    &__button {
+      max-width: 136px;
+      width: 8vw;
+    }
+  }
+}
