@@ -1,80 +1,190 @@
 @use "./../../foundation/variable"as v;
 @use "./../../foundation/mixin"as m;
 
-.c-page {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  font-size: 1.6rem;
-  font-weight: bold;
-  color: v.$color-main;
-  margin-top: 60px;
-  margin-bottom: 30px;
-  &__tbpc {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+// .c-page {
+//   display: flex;
+//   justify-content: space-between;
+//   align-items: center;
+//   font-size: 1.6rem;
+//   font-weight: bold;
+//   color: v.$color-main;
+//   margin-top: 60px;
+//   margin-bottom: 30px;
+//   &__tbpc {
+//     display: flex;
+//     justify-content: center;
+//     align-items: center;
+//     display: none;
+//   }
+//   &__currentpage {
+//     margin-right: 15px;
+//   }
+//   &__number {
+//     margin: 0 10px;
+//     a {
+//       display: inline-block;
+//       width: 35px;
+//       height: 35px;
+//       margin: 0 7.5px;
+//       border: 1px v.$color-main solid;
+//       background-color: v.$color-white;
+//       text-align: center;
+//       line-height: 35px;
+//       &:first-of-type {
+//         background-color: v.$color-brown;
+//         color: v.$color-white;
+//       }
+//     }
+//   }
+// }
+
+// @include m.md {
+//   .c-page {
+//     justify-content: center;
+//     margin-top: 105px;
+//     &__tbpc {
+//       display: flex;
+//     }
+//     &__spPrev {
+//       display: none;
+//     }
+//     &__spNext {
+//       display: none;
+//     }
+//     &__currentpage {
+//       margin-right: 1.5vw;
+//     }
+//     &__number {
+//       margin: 1.0vw;
+//       a {
+//         margin: 0.4vw;
+//       }
+//     }
+//   }
+// }
+// @include m.lg {
+//   .c-page {
+//     justify-content: center;
+//     margin-top: 150px;
+    
+//     &__currentpage {
+//       margin-right: 15px;
+//     }
+//     &__number {
+//       margin: 10px;
+//       a {
+//         margin: 7.5px;
+//       }
+//     }
+//   }
+// }
+/*
+Default style for WP-PageNavi plugin
+
+http://wordpress.org/extend/plugins/wp-pagenavi/
+*/
+
+a,span {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.wp-pagenavi {
+	clear: both;
+	font-size: 1.6rem;
+	font-weight: bold;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-top: 60px;
+	margin-bottom: 30px;
+  &>.pages {
+    margin: 0 1vw;
     display: none;
   }
-  &__currentpage {
-    margin-right: 15px;
-  }
-  &__number {
-    margin: 0 10px;
-    a {
-      display: inline-block;
-      width: 35px;
-      height: 35px;
-      margin: 0 7.5px;
-      border: 1px v.$color-main solid;
-      background-color: v.$color-white;
-      text-align: center;
-      line-height: 35px;
-      &:first-of-type {
-        background-color: v.$color-brown;
-        color: v.$color-white;
-      }
-    }
+  &>.page {
+    text-decoration: none;
+    width: 35px;
+    height: 35px;
+    border: 1px solid v.$color-main;
+    text-align: center;
+    margin: 0 1vw;
+    display: none;
   }
 }
 
+
+
+.wp-pagenavi span.current {
+	text-decoration: none;
+	width: 35px;
+	height: 35px;
+  margin: 0 1vw;
+	border: 1px solid v.$color-main;
+  display: none;
+  font-weight: bold;
+	text-align: center;
+	background-color: v.$color-brown_content;
+	color: v.$color-white;
+}
+
+
+.previouspostslink {
+	font-size: 1.6rem;
+	font-weight: bold;
+  display: flex;
+  width: 100%;
+  justify-content: flex-start;
+	&::after {
+    content: "前へ";
+    margin-left: 1vw;
+  }
+}
+.nextpostslink {
+	font-size: 1.6rem;
+	font-weight: bold;
+  display: flex;
+  width: 100%;
+  justify-content: flex-end;
+  &::before {
+    content: "次へ";
+    margin-right: 1vw;
+  }
+}
 @include m.md {
-  .c-page {
+  .wp-pagenavi {
     justify-content: center;
     margin-top: 105px;
-    &__tbpc {
+    &>.pages {
       display: flex;
     }
-    &__spPrev {
-      display: none;
-    }
-    &__spNext {
-      display: none;
-    }
-    &__currentpage {
-      margin-right: 1.5vw;
-    }
-    &__number {
-      margin: 1.0vw;
-      a {
-        margin: 0.4vw;
-      }
+    &>.page {
+      display: flex;
     }
   }
-}
+
+  .wp-pagenavi span.current {
+    display: flex;
+  }
+  .previouspostslink {
+    display: inline-block;
+    width: auto;
+    &::after {
+      display: none;
+    }
+  }
+  .nextpostslink {
+    display: inline-block;
+    width: auto;
+    &::before {
+      display: none;
+    }
+  }
+  }
 @include m.lg {
-  .c-page {
-    justify-content: center;
+  .wp-pagenavi {
     margin-top: 150px;
-    
-    &__currentpage {
-      margin-right: 15px;
-    }
-    &__number {
-      margin: 10px;
-      a {
-        margin: 7.5px;
-      }
-    }
+    margin-bottom: 64px;
   }
-}
+  }

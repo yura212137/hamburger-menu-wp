@@ -4,12 +4,11 @@
 .p-archiveTop {
   width: 100%;
   height: 283px;
-  margin-top: 220px;
   background-color: v.$color-back;
   position: relative;
 
   &__img {
-    background-image: url(/asset/img/page-title_arcive@2x.jpg);
+    background-image: url(../img/page-title_arcive@2x.jpg);
     background-position: 0;
     background-repeat: no-repeat;
     background-size: cover;
@@ -78,7 +77,6 @@
 @include m.lg {
   .p-archiveTop {
     height: 239px;
-    margin-top: auto;
     &__title {
       padding-left: 4.5vw;
     }

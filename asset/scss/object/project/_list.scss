@@ -1,7 +1,7 @@
 @use "./../../foundation/variable"as v;
 @use "./../../foundation/mixin"as m;
 
-.p-list {
+.p-singleTop {
   color: v.$color-brown_content;
   font-size: 1.6rem;
   &__ol {

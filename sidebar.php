@@ -4,7 +4,9 @@
         <div class="l-aside__menu">
           <a href="">Menu</a>
         </div>
-        <ul class="l-aside__burger">
+        <?php wp_nav_menu(array('menu' => 'categorymenu')); ?>
+        <!-- <ul class="l-aside__burger">
+          
           <li><a href="">バーガー</a></li>
           <ul>
             <li><a href="">ハンバーガー</a></li>
@@ -35,7 +37,7 @@
             <li><a href="">紅茶（Ice/Hot）</a></li>
             <li><a href="">コーヒー（Ice/Hot）</a></li>
           </ul>
-        </ul>
+        </ul> -->
       </aside>
     </div>
     <!-- aside -->

@@ -1,7 +1,7 @@
 @use "./../../foundation/variable"as v;
 @use "./../../foundation/mixin"as m;
 
-.p-table {
+.wp-block-table {
   margin: 30px 0;
   background-color: v.$color-white;
   color: v.$color-brown_content;
@@ -21,7 +21,7 @@
 }
 
 @include m.md {
-  .p-table {
+  .wp-block-table {
     margin: 60px 0;
 
     &__column1 {

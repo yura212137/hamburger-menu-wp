@@ -1,25 +1,45 @@
 @use "./../foundation/variable" as v;
 @use "./../foundation/mixin" as m;
 
-.l-footer {
-    height: 150px;
-    width: 100%;
-    background-image: url(/asset/img/footer.png);
-    color: v.$color-white;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    &__link {
-        font-size: 2rem;
-        margin-bottom: 20px;
-        a {
-            margin: 0 5px;
-        }
-    }
-    small {
-        font-size: 1.4rem;
-    }
-    
 
+
+.l-footer {
+	height: 150px;
+	width: 100%;
+	background-image: url(../img/footer.png);
+	color: v.$color-white;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+
+	&__link {
+		font-size: 2rem;
+		margin-bottom: 20px;
+
+		a {
+			margin: 0 5px;
+		}
+	}
+
+	small {
+		font-size: 1.4rem;
+	}
+}
+
+#menu-footermenu {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	font-size: 2rem;
+	margin-bottom: 20px;
+	li:last-of-type >a {
+		border-left: 1px solid v.$color-white;
+	}
+
+	a {
+		padding: 0 8px;
+		
+	}
+	
 }
