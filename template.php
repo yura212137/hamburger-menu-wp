@@ -1,5 +1,5 @@
 <?php if(have_posts()): while(have_posts()): the_post();?>
-
+<?php wp_link_pages(); ?>
 <div class="p-menu__list">
   <div class="p-menu__img">
       <?php the_post_thumbnail(); ?>

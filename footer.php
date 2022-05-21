@@ -1,6 +1,6 @@
     <!-- l-footer -->
     <footer class="l-footer">
-      <?php wp_nav_menu(array('menu' => 'footermenu'));?>
+      <?php wp_nav_menu(array('theme_location' => 'footer_nav'));?>
       <!-- <div class="l-footer__link">
       <a href="" class="l-footer__shop">
         ショップ情報

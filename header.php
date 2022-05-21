@@ -17,6 +17,7 @@
   </head>
 
   <body <?php body_class(); ?>>
+  <?php wp_body_open(); ?>
     <!-- .l-header -->
     <div class="l-main">
       <!-- hamburger button -->

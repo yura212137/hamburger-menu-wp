@@ -1,7 +1,7 @@
 @use "./../foundation/variable" as v;
 @use "./../foundation/mixin" as m;
 
-.menu-cateogrymenu-container {
+.menu-categorymenu-container {
   margin-top: 212px;
   margin-left: 46px;
 }
@@ -128,7 +128,7 @@ input[type="checkbox"]:checked~.back {
     display: none;
   }
 
-  .menu-cateogrymenu-container {
+  .menu-categorymenu-container {
     margin-top: 85px;
   }
 }

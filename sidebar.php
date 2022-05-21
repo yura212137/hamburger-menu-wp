@@ -4,7 +4,7 @@
         <div class="l-aside__menu">
           <a href="">Menu</a>
         </div>
-        <?php wp_nav_menu(array('menu' => 'categorymenu')); ?>
+        <?php wp_nav_menu(array('theme_location' => 'category_nav')); ?>
         <!-- <ul class="l-aside__burger">
           
           <li><a href="">バーガー</a></li>
