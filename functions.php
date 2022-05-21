@@ -65,7 +65,7 @@ function cpt_register_notices(){
     "show_in_rest" => true,
     "rest_base" => "",
     "rest_controller_class" => "WP_REST_Posts_Controller",
-    "has_archive" => false,
+    "has_archive" => true,
     "delete_with_user" => false,
     "exclude_from_search" => false,
     "map_meta_cap" => true,
@@ -73,7 +73,7 @@ function cpt_register_notices(){
     "rewrite" => ["slug" => "notices","with_front" => true],
     "query_var" => true,
     "menu_position" => 5,
-    "supports" => ["title","editer","thumbnail",'post-formats','custom-fields'],
+    "supports" => ["title","editer","thumbnail",'post-formats','custom-fields','excerpt' ],
   ];
   register_post_type("notices",$args);
 }

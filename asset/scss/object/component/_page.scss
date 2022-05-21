@@ -84,11 +84,11 @@ Default style for WP-PageNavi plugin
 http://wordpress.org/extend/plugins/wp-pagenavi/
 */
 
-a,span {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
+// a,span {
+// 	display: flex;
+// 	justify-content: center;
+// 	align-items: center;
+// }
 
 .wp-pagenavi {
 	clear: both;
@@ -102,6 +102,8 @@ a,span {
   &>.pages {
     margin: 0 1vw;
     display: none;
+    justify-content: center;
+    align-items: center;
   }
   &>.page {
     text-decoration: none;
@@ -111,6 +113,8 @@ a,span {
     text-align: center;
     margin: 0 1vw;
     display: none;
+    justify-content: center;
+    align-items: center;
   }
 }
 
@@ -127,6 +131,9 @@ a,span {
 	text-align: center;
 	background-color: v.$color-brown_content;
 	color: v.$color-white;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 

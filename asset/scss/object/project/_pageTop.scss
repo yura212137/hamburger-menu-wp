@@ -101,49 +101,107 @@
 
 @include m.md {
   .p-pageTop {
-    height: auto;
-
-    h1 {
-      font-size: 6rem;
-      font-weight: bold;
-      color: v.$color-white;
-      line-height: 220px;
-      padding-left: 10vw;
+    &__title {
+      img {
+        height: 500px;
+      }
+      h1 {
+        font-size: 6rem;
+        line-height: 500px;
+        padding-left: 10vw;
+        position: absolute;
+        top: 0;
+        left: 0;
+        text-shadow: 1px 1px 1px v.$color-main;
+      }
     }
-
     &__text {
       h2 {
-        font-size: 3.6rem;
-        margin: 60px 0;
-      }
-
-      p {
-        margin-bottom: 60px;
-      }
-
-      h3 {
-        font-size: 2.8rem;
-        margin-bottom: 60px;
-      }
-
-      h4 {
-        margin-bottom: 75px;
-      }
-
-      h5 {
-        margin-bottom: 60px;
-      }
-
-      h6 {
-        margin-bottom: 60px;
-      }
+              font-size: 3.6rem;
+              margin: 60px 0;
+            }
+      
+            p {
+              margin-bottom: 60px;
+            }
+      
+            h3 {
+              font-size: 2.8rem;
+              margin-bottom: 60px;
+            }
+      
+            h4 {
+              margin-bottom: 75px;
+            }
+      
+            h5 {
+              margin-bottom: 60px;
+            }
+      
+            h6 {
+              margin-bottom: 60px;
+            }
     }
-
+  
     &__tag {
       padding: 50px;
       padding-bottom: 60px;
     }
+  
+    &__authority {
+      color: v.$color-brown_content;
+      font-size: 1.6rem;
+  
+      .link {
+        text-decoration: underline;
+        color: #4A6C9B;
+      }
+    }
   }
+  // .p-pageTop {
+  //   height: auto;
+
+  //   h1 {
+  //     font-size: 6rem;
+  //     font-weight: bold;
+  //     color: v.$color-white;
+  //     line-height: 220px;
+  //     padding-left: 10vw;
+  //   }
+
+  //   &__text {
+  //     h2 {
+  //       font-size: 3.6rem;
+  //       margin: 60px 0;
+  //     }
+
+  //     p {
+  //       margin-bottom: 60px;
+  //     }
+
+  //     h3 {
+  //       font-size: 2.8rem;
+  //       margin-bottom: 60px;
+  //     }
+
+  //     h4 {
+  //       margin-bottom: 75px;
+  //     }
+
+  //     h5 {
+  //       margin-bottom: 60px;
+  //     }
+
+  //     h6 {
+  //       margin-bottom: 60px;
+  //     }
+  //   }
+
+  //   &__tag {
+  //     padding: 50px;
+  //     padding-bottom: 60px;
+  //   }
+  // }
 }
 
 @include m.lg {

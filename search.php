@@ -16,8 +16,18 @@
           <section class="p-searchTop__text">
             <div class="c-inner">
               <!-- <h2>小見出しが入ります</h2> -->
-              <p>
-              <?php echo category_description(); ?>
+              <?php if (have_posts()): ?>
+              <p>         
+                <?php
+                  if (isset($_GET['s']) && empty($_GET['s'])) {
+                    echo '検索キーワード未入力'; // 検索キーワードが未入力の場合のテキストを指定
+                  } else {
+                    echo '“'.$_GET['s'] .'”の検索結果：'.$wp_query->found_posts .'件'; // 検索キーワードと該当件数を表示
+                  }
+                ?>
+                <?php else: ?>
+                検索されたキーワードにマッチする記事はありませんでした
+                <?php endif; ?>
               </p>
             </div>
           </section>

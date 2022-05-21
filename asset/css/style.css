@@ -450,12 +450,6 @@ Default style for WP-PageNavi plugin
 
 http://wordpress.org/extend/plugins/wp-pagenavi/
 */
-a, span {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
 .wp-pagenavi {
   clear: both;
   font-size: 1.6rem;
@@ -469,6 +463,8 @@ a, span {
 .wp-pagenavi > .pages {
   margin: 0 1vw;
   display: none;
+  justify-content: center;
+  align-items: center;
 }
 .wp-pagenavi > .page {
   text-decoration: none;
@@ -478,6 +474,8 @@ a, span {
   text-align: center;
   margin: 0 1vw;
   display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .wp-pagenavi span.current {
@@ -491,6 +489,9 @@ a, span {
   text-align: center;
   background-color: #3C2A10;
   color: #ffffff;
+  display: none;
+  justify-content: center;
+  align-items: center;
 }
 
 .previouspostslink {
@@ -618,18 +619,18 @@ a, span {
 .p-model__content {
   margin-top: 250px;
 }
-.p-model__description {
+.p-model__description ul li {
   background-color: #ffffff;
   opacity: 0.8;
   margin-top: 20px;
   padding: 10px;
 }
-.p-model__description h3 {
+.p-model__description ul li h3 {
   color: #3C2A10;
   font-weight: bold;
   font-size: 2.2rem;
 }
-.p-model__description p {
+.p-model__description ul li p {
   color: #3C2A10;
   font-weight: normal;
   font-size: 1.6rem;
@@ -659,21 +660,21 @@ a, span {
   width: 100%;
   position: relative;
 }
-.p-access__content {
-  width: 100%;
-  height: 100%;
-}
-.p-access__content::before {
-  content: "";
+.p-access__map iframe {
   position: absolute;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
-  background: url(../img/map.png) no-repeat;
-  background-size: 1480px;
-  background-position: 30% 57%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
   opacity: 0.6;
+}
+.p-access__content {
+  width: 100%;
+  height: 100%;
 }
 .p-access__description {
   position: relative;
@@ -879,7 +880,6 @@ a, span {
 .p-searchTop {
   width: 100%;
   height: 283px;
-  margin-top: 220px;
   background-color: #000000;
   position: relative;
 }
@@ -916,17 +916,12 @@ a, span {
   font-weight: bold;
   color: #ffffff;
 }
-.p-searchTop__text h1 {
-  font-size: 2.8rem;
-  font-weight: bold;
-  color: #3C2A10;
-  margin: 30px 0;
-}
 .p-searchTop__text p {
-  font-size: 1.6rem;
+  font-size: 2rem;
   font-weight: normal;
   color: #3C2A10;
   margin-bottom: 20px;
+  margin-top: 20px;
 }
 
 @media (min-width: 600px) {
@@ -938,6 +933,9 @@ a, span {
   .p-searchTop__title h1 {
     font-size: 6rem;
     margin-right: 20px;
+  }
+  .p-searchTop__text p {
+    font-size: 2.8rem;
   }
 }
 @media (min-width: 1025px) {
@@ -1346,15 +1344,17 @@ a, span {
 }
 
 @media (min-width: 600px) {
-  .p-pageTop {
-    height: auto;
+  .p-pageTop__title img {
+    height: 500px;
   }
-  .p-pageTop h1 {
+  .p-pageTop__title h1 {
     font-size: 6rem;
-    font-weight: bold;
-    color: #ffffff;
-    line-height: 220px;
+    line-height: 500px;
     padding-left: 10vw;
+    position: absolute;
+    top: 0;
+    left: 0;
+    text-shadow: 1px 1px 1px #707070;
   }
   .p-pageTop__text h2 {
     font-size: 3.6rem;
@@ -1379,6 +1379,14 @@ a, span {
   .p-pageTop__tag {
     padding: 50px;
     padding-bottom: 60px;
+  }
+  .p-pageTop__authority {
+    color: #3C2A10;
+    font-size: 1.6rem;
+  }
+  .p-pageTop__authority .link {
+    text-decoration: underline;
+    color: #4A6C9B;
   }
 }
 @media (min-width: 1025px) {
