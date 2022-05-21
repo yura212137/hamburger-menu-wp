@@ -1,0 +1,29 @@
+@use "./../../foundation/variable"as v;
+@use "./../../foundation/mixin"as m;
+
+.p-404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px auto;
+  height: 100%;
+  h2 {
+    font-weight: bold;
+    font-size: 2rem;
+    margin-bottom: 20px;
+  }
+  &__button {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 163px;
+      height: 42.5px;
+      background-color: v.$color-brown;
+      color: v.$color-white;
+      font-weight: bold;
+      font-size: 1.6rem;
+      border-radius: 21px;
+      margin: 20px;
+    }
+}

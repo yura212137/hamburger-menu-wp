@@ -9,8 +9,9 @@ function custom_theme_support(){
   ));
   //テーマサポート
   add_theme_support("menus");
-  add_theme_support("titile-tag");
+  add_theme_support("title-tag");
   add_theme_support( 'post-thumbnails' ); 
+  add_theme_support( 'automatic-feed-links' );
   register_nav_menus(array(
     'footer_nav' => esc_html__('footer navigation','rtbread'),
     'category_nav' => esc_html__('category navigation','rtbread'),
@@ -20,7 +21,7 @@ add_action('after_setup_theme','custom_theme_support');
 
 
 //タイトル出力
-function hamburgermenuwp_titile($title){
+function hamburgermenuwp_title($title){
   if(is_front_page() && is_home()){
     $title = get_bloginfo("name","disply");
   }elseif (is_singular()){
@@ -28,7 +29,7 @@ function hamburgermenuwp_titile($title){
   }
   return $title;
 }
-add_filter("pre_get_document_title","hamburger-menu-wp_titile");
+add_filter("pre_get_document_title","hamburger-menu-wp_title");
 
 // function hamburgermenuwp_script(){
 //   //reset.css destyle

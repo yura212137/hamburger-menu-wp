@@ -1400,6 +1400,33 @@ http://wordpress.org/extend/plugins/wp-pagenavi/
     padding: 50px;
   }
 }
+.p-404 {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: 50px auto;
+  height: 100%;
+}
+.p-404 h2 {
+  font-weight: bold;
+  font-size: 2rem;
+  margin-bottom: 20px;
+}
+.p-404__button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 163px;
+  height: 42.5px;
+  background-color: #3C2B1C;
+  color: #ffffff;
+  font-weight: bold;
+  font-size: 1.6rem;
+  border-radius: 21px;
+  margin: 20px;
+}
+
 /*--------------------------------------*
 * foundation
 *--------------------------------------*/
