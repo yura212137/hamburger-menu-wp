@@ -41,6 +41,8 @@ add_filter("pre_get_document_title","hamburgermenuwp_title");
 
 
 function readScript(){
+  $my_theme = wp_get_theme();
+  $theme_version = $my_theme->get( 'Version' );
   wp_enqueue_style("destyle",get_theme_file_uri("/asset/css/destyle.css"),array(), $theme_version );
   wp_enqueue_style("Robot",'//fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap',array(), '' );
   wp_enqueue_style("mplus",'//fonts.googleapis.com/css2?family=M+PLUS+1:wght@400;700&display=swap',array(), '' );
