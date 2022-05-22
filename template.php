@@ -8,7 +8,6 @@
     <h2 class="p-menu__title">
       <?php the_title(); ?>
     </h2>
-    <!-- <h3>小見出しが入ります</h3> -->
     <p>
       <?php the_excerpt(); ?>
     </p>

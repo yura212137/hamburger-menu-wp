@@ -1,6 +1,5 @@
 <?php get_header(); ?>
-<main>
-  
+<main>  
 <div class="c-inner">
 <div class="p-404">
 <h2>アクセスしたページは見つかりませんでした。</h2>

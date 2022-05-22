@@ -8,7 +8,6 @@
             </h1>
           </section>
           <!-- .p-fv -->
-
           <!-- .p-model -->
           <section class="p-model">
             <div class="p-model__takeout">

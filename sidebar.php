@@ -5,8 +5,7 @@
           <a href="">Menu</a>
         </div>
         <?php wp_nav_menu(array('theme_location' => 'category_nav')); ?>
-        <!-- <ul class="l-aside__burger">
-          
+        <!-- <ul class="l-aside__burger">        
           <li><a href="">バーガー</a></li>
           <ul>
             <li><a href="">ハンバーガー</a></li>

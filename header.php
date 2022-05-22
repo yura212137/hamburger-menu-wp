@@ -12,10 +12,8 @@
     <!-- サイトのアイコン -->
     <link rel="shortcut icon" href="#" type="image/x-icon" />
     
-
     <?php wp_head(); ?>
   </head>
-
   <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
     <!-- .l-header -->
@@ -27,13 +25,9 @@
       <!-- hamburger button -->
       <div class="l-main__headermain">
         <header class="l-header">
-
           <a href="<?php echo esc_url(home_url("/")); ?>" class="l-header__title">
             <?php bloginfo("name");?>
           </a>
-
           <?php get_search_form(); ?>
-
-
         </header>
         <!-- .l-header -->

@@ -31,7 +31,6 @@
               </p>
             </div>
           </section>
-
           <!-- .p-searchTop -->
 
           <!-- .p-menu -->
@@ -111,7 +110,6 @@
           <div class="c-inner">
             <section class="p-page c-page">
             <?php wp_pagenavi(); ?>
-
               <!-- <div class="c-page__spPrev">
                 <i class="fa-solid fa-angles-left fa-lg"></i>
                 <a href="">前へ</a>
