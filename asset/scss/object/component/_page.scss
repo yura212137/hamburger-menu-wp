@@ -193,5 +193,15 @@ http://wordpress.org/extend/plugins/wp-pagenavi/
   .wp-pagenavi {
     margin-top: 150px;
     margin-bottom: 64px;
+
+    &>.pages {
+      margin: 0 10px;
+    }
+    &>.page {
+      margin: 0 10px;
+    }
   }
+  .wp-pagenavi span.current {
+    margin: 0 10px;
   }
+}

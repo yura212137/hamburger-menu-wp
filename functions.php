@@ -104,81 +104,19 @@ function cpt_register_dep(){
 }
 add_action('init','cpt_register_dep');
 
+//投稿データのみを検索
+function my_pre_get_posts($query) {
+  if ( !is_admin() && $query->is_main_query() && $query->is_search() ) {
+    $query->set( 'post_type', array('post') );
+  }
+}
+add_action( 'pre_get_posts','my_pre_get_posts' );
 
-/**
- * サイト内検索の範囲に、カテゴリー名、タグ名、を含める
- */
-function custom_search($search, $wp_query) {
-  global $wpdb;
-
-  //サーチページ以外だったら終了
-  if (!$wp_query->is_search)
-  return $search;
-  
-  if (!isset($wp_query->query_vars))
-  return $search;
-  // タグ名・カテゴリ名も検索対象に
-  $search_words = explode(' ', isset($wp_query->query_vars['s']) ? $wp_query->query_vars['s'] : '');
-  if ( count($search_words) > 0 ) {
-    $search = '';
-    foreach ( $search_words as $word ) {
-    if ( !empty($word) ) {
-    $search_word = $wpdb->escape("%{$word}%");
-    $search .= " AND (
-        {$wpdb->posts}.post_title LIKE '{$search_word}'
-        OR {$wpdb->posts}.post_content LIKE '{$search_word}'
-        OR {$wpdb->posts}.ID IN (
-          SELECT distinct r.object_id
-          FROM {$wpdb->term_relationships} AS r
-          INNER JOIN {$wpdb->term_taxonomy} AS tt ON r.term_taxonomy_id = tt.term_taxonomy_id
-          INNER JOIN {$wpdb->terms} AS t ON tt.term_id = t.term_id
-          WHERE t.name LIKE '{$search_word}'
-        OR t.slug LIKE '{$search_word}'
-        OR tt.description LIKE '{$search_word}'
-        )
-      ) ";
-    }
+//検索されたタイトルをカスタマイズ
+function wp_search_title($search_title){
+  if(is_search()){
+    $search_title = get_search_query();
   }
-  }
-
-  return $search;
-  }
-  add_filter('posts_search','custom_search', 10, 2);
-
-   //pre_get_posts で 検索結果のクエリーに条件を追加
-function change_posts_paging($query) {
-
-  // 管理画面やメインクエリーでない場合は除外
-  if ( is_admin() || ! $query->is_main_query() ) {
-  return;
-  }
-   // 検索結果ページ
-  if ( $query->is_search() ) {
-    // 公開されてる記事のみ検索
-    $query->set( 'post_status', 'publish' );
-    // 投稿のみ検索
-    $query->set( 'post_type', 'post' );
-    // 表示したくないカテゴリーID
-    // $query->set( 'category__not_in', 1 );
-    //　表示したくない投稿ID。arrayで複数指定可。
-    // $query->set( 'post__not_in', array( 1, 2, 3, 4, 5 ) );
-    //　検索結果の表示順
-    $query->set( 'order', 'DESC' );
-    //　検索結果の表示数
-    $query->set( 'posts_per_page', 5 );
-  return;
-  }
-  }
-  add_action( 'pre_get_posts', 'change_posts_paging' );
-  
-  //投稿タイプを追加する場合は、array 型で記述します。
-  //カスタムポストタイプ（ex. music ）を含む場合もここに追加します。
-  //$query->set( 'post_type', array( 'post', 'page', 'music' ) );
-
-  function wp_search_title($search_title){
-    if(is_search()){
-      $search_title = get_search_query();
-    }
-    return $search_title;
-  }
-  add_filter('wp_title','wp_search_title');
+  return $search_title;
+}
+add_filter('wp_title','wp_search_title');

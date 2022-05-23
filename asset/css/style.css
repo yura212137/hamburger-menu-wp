@@ -555,6 +555,16 @@ http://wordpress.org/extend/plugins/wp-pagenavi/
     margin-top: 150px;
     margin-bottom: 64px;
   }
+  .wp-pagenavi > .pages {
+    margin: 0 10px;
+  }
+  .wp-pagenavi > .page {
+    margin: 0 10px;
+  }
+
+  .wp-pagenavi span.current {
+    margin: 0 10px;
+  }
 }
 .p-fv {
   width: 100%;
