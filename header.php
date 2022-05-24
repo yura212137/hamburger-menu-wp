@@ -5,15 +5,12 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- サイトのタイトル -->
-    <title>Hamburger</title>
     <!-- サイトの説明文 -->
     <meta name="description" content="ハンバーガーを売りにしたオシャレなカフェデモサイト">
-    <!-- サイトのアイコン -->
-    <link rel="shortcut icon" href="#" type="image/x-icon" />
-    
+
     <?php wp_head(); ?>
   </head>
+
   <body <?php body_class(); ?>>
   <?php wp_body_open(); ?>
     <!-- .l-header -->
